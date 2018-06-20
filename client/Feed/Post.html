@@ -1,10 +1,11 @@
 <template name="Post">
 	<div class="panel panel-default">
 	  <div class="panel-heading">
-	    <h3 class="panel-title">Autor</h3>
+	    <h3 class="panel-title">{{usernameDoAutor}}</h3>
 	  </div>
 	  <div class="panel-body">
-	    {{texto}}
+	    <div>{{texto}}</div>
+	    <button class="btn btn-default like-button">Curtir</button>
 	  </div>
 	</div>
 </template>
