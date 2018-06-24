@@ -11,6 +11,10 @@
 	    <button class="btn btn-default botao-curtir">Curtir</button>
 	    {{/if}}
 	    <div>{{numeroDeCurtidas}} curtidas</div>
+	    {{#each comentarios}}
+	    {{>Comentario}}
+	    {{/each}}
+	    {{>NovoComentario}}
 	  </div>
 	</div>
 </template>

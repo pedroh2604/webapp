@@ -26,6 +26,10 @@ Template.Post.helpers({
     } else {
       return true;
     }
+  },
+// gets comments from the database and displays them
+  comentarios: function () {
+      return Comentarios.find({post: this._id}).fetch();
   }
 });
 
