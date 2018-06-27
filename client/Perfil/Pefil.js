@@ -12,7 +12,7 @@ Template.Perfil.helpers({
 //finds authors' posts to put them in their profile
 	posts: function() {
 		var idDoUsuario = FlowRouter.getParam("id");
-		var postDoPerfil = Posts.find({idDoAutor: idDoUsuario}).fetch();
+		var postDoPerfil = Posts.find({idDoAutor: idDoUsuario}).fetch().reverse();
 		return postDoPerfil;
 	},
 	segue: function() {
