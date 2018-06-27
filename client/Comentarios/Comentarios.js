@@ -7,7 +7,11 @@ Template.Comentario.helpers({
 		var autor = Meteor.users.findOne({_id: idDoAutor});
 // returns only usernames
 		return FirstUpper(autor.username);
-	}
+	},
+     idDoAutor: function() {
+          var idDoAutor = this.autor;
+          return idDoAutor;
+     }
 });
 
 //capitalizes the 1st letter of words

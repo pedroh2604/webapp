@@ -9,6 +9,6 @@ Template.NovoComentario.events ({
 		 var idDoPost = template.data._id;
 //calls Meteor method that insert the comment in the database
 		Meteor.call("inserirComentario", texto, idDoPost );
-		 evento.target.texto.value = "";
+		evento.target.texto.value = "";
 	}
 });

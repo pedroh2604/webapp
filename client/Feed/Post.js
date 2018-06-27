@@ -30,10 +30,17 @@ Template.Post.helpers({
 // gets comments from the database and displays them
   comentarios: function () {
       return Comentarios.find({post: this._id}).fetch();
+  },
+// checks if the user is actually the one who created the post
+  eAutor: function() {
+    var idDoAutor = this.idDoAutor;
+    return idDoAutor === Meteor.userId();
   }
 });
 
-//like/dislike button
+
+
+// like ,dislike and remove buttons
 Template.Post.events({
 // when button (botao-curtir class) is clicked
     "click .botao-curtir": function(evento, template) {
@@ -43,6 +50,9 @@ Template.Post.events({
 // when button (botao-descurtir class) is clicked
     "click .botao-descurtir": function (evento, template) {
       Meteor.call("descurtirPost", template.data._id);
+    },
+    "click .botao-remover": function(evento, template) {
+      Meteor.call("removerPost", template.data._id);
     }
 });
 

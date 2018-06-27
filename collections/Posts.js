@@ -31,5 +31,18 @@ Meteor.methods({
 				curtidas: Meteor.userId()
 			}
 		});
+	},
+//removes posts
+	"removerPost": function(idDoPost) {
+/* 
+denies removing if the author from the post is not the 
+user logged in(from console)
+*/
+		var post = Posts.findOne({_id: idDoPost});
+		var autor = post.idDoAutor;
+		if (idDoAutor === Meteor.userId()) {
+// finds each post in the collection, getting info from it
+			Posts.remove(idDoPost); 
+		}
 	}
 });
