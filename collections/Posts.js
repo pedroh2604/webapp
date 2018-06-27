@@ -1,14 +1,18 @@
 Posts =  new Mongo.Collection("posts");
 
-//stores text typed. user's id and usernames from people who liked posts
+/*
+stores text typed, images, user's id and usernames 
+from people who liked posts
+*/
 Meteor.methods({
-	"inserirPost": function(textoDoFormulario) {
+	"inserirPost": function(textoDoFormulario, urlDaImagem) {
 // some text are considered false in js as null, empty, undefined
 		if(Meteor.userId() !== null && textoDoFormulario) {
 			Posts.insert({
 	            texto: textoDoFormulario,
 	            idDoAutor: Meteor.userId(),
-	            curtidas: []
+	            curtidas: [], 
+	            imagem: urlDaImagem
         	});
 		}
 	},
