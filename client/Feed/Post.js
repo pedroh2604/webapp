@@ -1,3 +1,8 @@
+// calls Meteor.publish from server/main.js
+Template.Post.onCreated(function() {
+   Meteor.subscribe("comentarios", this.data._id); 
+});
+
 Template.Post.helpers({
 //find each author's username and put them in the post
 	usernameDoAutor: function() {
@@ -51,6 +56,7 @@ Template.Post.events({
     "click .botao-descurtir": function (evento, template) {
       Meteor.call("descurtirPost", template.data._id);
     },
+// when button (botao-remover class) is clicked
     "click .botao-remover": function(evento, template) {
       Meteor.call("removerPost", template.data._id);
     }

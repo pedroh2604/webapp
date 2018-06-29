@@ -1,4 +1,10 @@
-	//accesses post stored in the database and insert them in the template
+// calls Meteor.publish from server/main.js
+Template.Feed.onCreated(function() {
+	Meteor.subscribe("posts");
+});
+
+Meteor.subscribe("usuarios");
+//accesses post stored in the database and insert them in the template
 Template.Feed.helpers({
 	posts: function() {
 	/*

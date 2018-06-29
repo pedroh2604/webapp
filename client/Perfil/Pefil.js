@@ -1,6 +1,7 @@
 /* gets the routs according to usersnames
 https://atmospherejs.com/kadira/flow-router
 */
+Meteor.subscribe("posts");
 Template.Perfil.helpers({
 	perfil: function() {
 // Reactive function which you can use to get a parameter from the URL
